@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Moment_1._1_Razor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Moment_1._1_Razor.styles.css" asp-append-version="true" />
@@ -12,16 +15,21 @@
 
 <body>
     @{
-        <!-- Get date and format to yyyy-mm-dd -->
+    <!-- Get date and format to yyyy-mm-dd -->
     DateTime today = DateTime.Now;
     string formattedDate = today.ToString("yyyy-MM-dd");
     }
     <header>
-        <a id="header-brand" asp-area="" asp-page="/Index"><img src="https://placehold.co/300x100" alt=""></a>
+        <a id="header-brand" asp-area="" asp-page="/Index"><h1 id="brand-text">RazorPages</h1></a>
+       
         <section id="header-date">
             <!-- Output date -->
             <p>Dagens datum är: @formattedDate</p>
         </section>
+
+    </header>
+
+    <main role="main" class="">
         <nav>
             <li class="">
                 <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
@@ -33,21 +41,21 @@
                 <a class="nav-link text-dark" asp-area="" asp-page="/About">About</a>
             </li>
         </nav>
-    </header>
-    
-        <main role="main" class="">
-            @RenderBody()
-        </main>
-    
+        @RenderBody()
+    </main>
+
 
     <footer>
         <div class="container">
-           <p>Av Student Anders Sundin - Kontakta mig via e-post: olsu2201@student.miun.se</p>
+            <hr style="width: 80%; margin: auto; margin-bottom: 5px;">
+            <p>Av Student Anders Sundin - Kontakta mig via e-post: olsu2201@student.miun.se</p>
+            <br>
+            <p>&copy; <span id="copyright"></span></p>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
