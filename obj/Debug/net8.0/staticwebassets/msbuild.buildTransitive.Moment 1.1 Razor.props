@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Moment 1.1 Razor.props" />
+</Project>
