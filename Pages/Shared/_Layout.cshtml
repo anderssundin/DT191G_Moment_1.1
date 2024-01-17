@@ -20,8 +20,10 @@
     string formattedDate = today.ToString("yyyy-MM-dd");
     }
     <header>
-        <a id="header-brand" asp-area="" asp-page="/Index"><h1 id="brand-text">RazorPages</h1></a>
-       
+        <a id="header-brand" asp-area="" asp-page="/Index">
+            <h1 id="brand-text">RazorPages</h1>
+        </a>
+
         <section id="header-date">
             <!-- Output date -->
             <p>Dagens datum är: @formattedDate</p>
@@ -48,7 +50,8 @@
     <footer>
         <div class="container">
             <hr style="width: 80%; margin: auto; margin-bottom: 5px;">
-            <p>Av Student Anders Sundin - Kontakta mig via e-post: olsu2201@student.miun.se</p>
+            <p>Av Student Anders Sundin - Kontakta mig via e-post: <a
+                    href="mailto:olsu2201@student.miun.se">olsu2201@student.miun.se</a></p>
             <br>
             <p>&copy; <span id="copyright"></span></p>
         </div>

@@ -1,44 +1,49 @@
 ﻿@page
 @model MyApp.Namespace.RazorModel
 @{
-    DateTime date = DateTime.Now;
-    string day = date.DayOfWeek.ToString();
-    var courses = new[]
-    {
-        new { kurskod = "DT057G", namn = "Webbutveckling I" },
-        new { kurskod = "DT093G", namn = "Webbutveckling II" },
-        new { kurskod = "DT068G", namn = "Webbanvändbarhet" },
-        new { kurskod = "DT084G", namn = "Introduktion till programmering i JavaScript" },
-        new { kurskod = "DT200G", namn = "Grafisk teknik för webb" },
-        new { kurskod = "DT003G", namn = "Databaser" },
-        new { kurskod = "DT173G", namn = "Webbutveckling III" },
-        new { kurskod = "DT197G", namn = "Webbdesign för CMS" },
-        new { kurskod = "DT193G", namn = "Fullstack-utveckling med ramverk" },
-        new { kurskod = "DT071G", namn = "JavaScriptbaserad Webbutveckling" }
-        
-    };
+
+    ViewData["Title"] = "Razor";
+
+DateTime date = DateTime.Now;
+string day = date.DayOfWeek.ToString();
+var courses = new[]
+{
+new { kurskod = "DT057G", namn = "Webbutveckling I" },
+new { kurskod = "DT093G", namn = "Webbutveckling II" },
+new { kurskod = "DT068G", namn = "Webbanvändbarhet" },
+new { kurskod = "DT084G", namn = "Introduktion till programmering i JavaScript" },
+new { kurskod = "DT200G", namn = "Grafisk teknik för webb" },
+new { kurskod = "DT003G", namn = "Databaser" },
+new { kurskod = "DT173G", namn = "Webbutveckling III" },
+new { kurskod = "DT197G", namn = "Webbdesign för CMS" },
+new { kurskod = "DT193G", namn = "Fullstack-utveckling med ramverk" },
+new { kurskod = "DT071G", namn = "JavaScriptbaserad Webbutveckling" }
+
+};
+
+
 }
 <div id="razor-container">
-<h1>Razor</h1>
-<section id="razor-date-information">
-<h2>Information</h2>
-<p><strong>Datum/klockslag:</strong> @date</p>
+    <h1>Razor</h1>
+    <section id="razor-date-information">
+        <h2>Information</h2>
+        <p><strong>Datum/klockslag:</strong> @date</p>
 
-@if (day == "Monday")
-{
-    <p>Idag är det måndag.</p>
-} 
-else{
-    <p>Idag är det inte måndag.</p>
-}
-</section>
-<section>
-    <h3>Kurser jag läst</h3>
-    <ul>
-        @foreach(var course in courses)
+        @if (day == "Monday")
         {
-            <li id="razor-course-li">@course.kurskod : @course.namn</li>
+        <p>Idag är det måndag.</p>
         }
-    </ul>
-</section>
+        else{
+        <p>Idag är det inte måndag.</p>
+        }
+    </section>
+    <section>
+        <h3>Kurser jag läst</h3>
+        <ul>
+            @foreach(var course in courses)
+            {
+            <li id="razor-course-li">@course.kurskod : @course.namn</li>
+            }
+        </ul>
+    </section>
 </div>
